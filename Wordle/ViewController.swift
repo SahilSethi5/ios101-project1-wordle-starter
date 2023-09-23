@@ -30,12 +30,14 @@ class ViewController: UIViewController {
       Else, it should use the `enter` method of `boardController` and pass in the selected string as the argument.
      */
     // START YOUR CODE HERE
-      keyboardController.didSelectString  = {(keyboardString: String)} in
-                                        if keyboardString == DELETE_KEY
-                                        boardController.deleteLastCharacter()
-                                        else
-                                            boardController.enter
-                                
+      keyboardController.didSelectString  = {(keyboardString: String) in
+                                            if keyboardString == DELETE_KEY {
+                                                self.boardController.deleteLastCharacter()
+                                            }
+                                            else{
+                                                self.boardController.enter(keyboardString)
+                                                }
+                                            }
                                             
     // END YOUR CODE HERE
   }
